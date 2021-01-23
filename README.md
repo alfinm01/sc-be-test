@@ -14,6 +14,6 @@ API also can be manually accessed on [http://34.126.127.118/](http://34.126.127.
 
 Below is the architecture diagram of the flow of this API:<br />
 
-![Architecture Diagram](api-flow.png)<br />
+![Architecture Diagram](api-flow.jpg)<br />
 
 This project was created using ExpressJS and MongoDB stacks.
