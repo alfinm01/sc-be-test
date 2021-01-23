@@ -1,0 +1,8 @@
+{
+    "connectionString": "mongodb+srv://sejutacitatest:sejutacitapass@cluster0.pcb9p.mongodb.net/test?retryWrites=true&w=majority",
+    "secret": "a secret string key for sejuta cita test",
+    "role": {
+        "ADMIN": "admin",
+        "USER": "user"
+    }
+}
