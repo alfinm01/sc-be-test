@@ -1,11 +1,8 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express')
+const router = express.Router()
 
 router.get('/', (req, res, next) => {
-  res.redirect('/apis-docs');
-});
-router.get('/apis-docs', (req, res, next) => {
-  res.send('swagger docs here');
-});
+  res.redirect('https://app.swaggerhub.com/apis-docs/alfinm01/sejutacita-be-test/1.0.0')
+})
 
-module.exports = router;
+module.exports = router
