@@ -1,7 +1,7 @@
 const authorize = () => {
-    console.log('in authorize')
+    console.log('init authorization')
     return (req, res, next) => {
-        console.log('authorize return function')
+        console.log('authorized')
         // return res.status(401).json({ message: 'Unauthorized' })
         next()
     }
