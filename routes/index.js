@@ -1,13 +1,12 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  //res.send('it works!');
+router.get('/', (req, res, next) => {
+  console.log('in')
   res.redirect('/apis-docs');
 });
-
-router.get('/apis-docs', function(req, res, next) {
+router.get('/apis-docs', (req, res, next) => {
+  console.log('yes')
   res.send('swagger docs here');
 });
 
