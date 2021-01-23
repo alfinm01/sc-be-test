@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: sc-be-test
+  name: sc-be-test
+  namespace: default
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: sc-be-test
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: sc-be-test
+    spec:
+      containers:
+        - image: gcr.io/sejuta-cita-be-test/github.com/alfinm01/sc-be-test
+          imagePullPolicy: IfNotPresent
+          name: sc-be-test-sha256-1
+---
+apiVersion: autoscaling/v2beta1
+kind: HorizontalPodAutoscaler
+metadata:
+  labels:
+    app: sc-be-test
+  name: sc-be-test-hpa-a3kz
+  namespace: default
+spec:
+  maxReplicas: 5
+  metrics:
+    - resource:
+        name: cpu
+        targetAverageUtilization: 80
+      type: Resource
+  minReplicas: 1
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: sc-be-test
